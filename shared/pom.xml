@@ -10,6 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>shared</artifactId>
+    <packaging>pom</packaging>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
