@@ -16,6 +16,8 @@ jobs:
         steps:
             # SETUP
             - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
             - uses: actions/setup-java@v3
               with:
                   java-version: ${{ env.JAVA_VERSION }}
@@ -37,17 +39,15 @@ jobs:
             - name: Git Fetch
               if: success()
               run: git fetch --all
-            - name: Modified contexts from src
-              id: modified-contexts
-              if: success()
-              run: |
-                  git diff --name-status origin/main | grep "src/" | awk -F '/' '{print $2}' | uniq
+
             - name: Build and Push Docker Image
               if: success()
               run: |
-                for context in ${{ steps.modified-contexts.outputs.modified-contexts }}
-                do
-                    cd src/$context
+                MODIFIED_CONTEXTS=$(git diff --name-status ${{ github.event.before }} | grep "src/" | awk -F '/' '{print $2}' | uniq)
+                IFS=$'\n'
+                for modified_context in $MODIFIED_CONTEXTS; do
+                    echo "Building $modified_context"
+                    cd src/"$modified_context" || exit
                     mvn clean verify -P build-docker-image -DskipTests
                     cd ../../
                 done

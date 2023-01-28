@@ -8,6 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 public class APIGatewayApplication {
     public static void main(String[] args) {
+        System.out.println("API Gateway");
         SpringApplication.run(APIGatewayApplication.class, args);
     }
 }
