@@ -34,9 +34,23 @@ jobs:
                   username: ${{ secrets.DOCKER_USERNAME }}
                   password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-            -   name: Push To Dockerhub
-                id: dockerhubPush
-                run: mvn clean verify -P build-docker-image -DskipTests
+            - name: Git Fetch
+              if: success()
+              run: git fetch --all
+            - name: Modified contexts from src
+              id: modified-contexts
+              if: success()
+              run: |
+                  git diff --name-status origin/main | grep "src/" | awk -F '/' '{print $2}' | uniq
+            - name: Build and Push Docker Image
+              if: success()
+              run: |
+                for context in ${{ steps.modified-contexts.outputs.modified-contexts }}
+                do
+                    cd src/$context
+                    mvn clean verify -P build-docker-image -DskipTests
+                    cd ../../
+                done
             # MESSAGES
             -   name: Send OK Discord Message
                 uses: rjstone/discord-webhook-notify@v1
