@@ -20,6 +20,12 @@ jobs:
               with:
                   java-version: ${{ env.JAVA_VERSION }}
                   distribution: ${{ env.JAVA_DISTRIBUTION }}
+            - uses: actions/cache@v1
+              with:
+                  path: ~/.m2/repository
+                  key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-maven-
             # UPLOAD TO DOCKERHUB
             - name: Docker Login
               if: success()
