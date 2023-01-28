@@ -1,4 +1,4 @@
-package application;
+package java.org.rbernalop.shared.application;
 
 import java.lang.annotation.*;
 
