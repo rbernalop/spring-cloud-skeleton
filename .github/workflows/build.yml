@@ -1,9 +1,6 @@
 name: CI
 
-on:
-    push:
-        branches:
-            - 'main'
+on: [pull_request]
 
 env:
     JAVA_VERSION: '17'
