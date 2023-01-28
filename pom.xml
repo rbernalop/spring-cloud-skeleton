@@ -8,10 +8,10 @@
     <name>spring-cloud-skeleton</name>
 
     <modules>
-        <module>eureka-server</module>
-        <module>api-gateway</module>
-        <module>frontend-react</module>
-        <module>shared</module>
+        <module>src/eureka-server</module>
+        <module>src/api-gateway</module>
+        <module>src/frontend-react</module>
+        <module>src/shared</module>
     </modules>
 
     <properties>
