@@ -4,15 +4,15 @@ This is a skeleton project for Spring Cloud applications. It contains a set of
 commonly used services, dependencies and configurations. This project uses maven 
 as a build tool and every service is a maven module:
 
-* [api-gateway](api-gateway/pom.xml): API Gateway service which will be the entry
+* [api-gateway](src/api-gateway/pom.xml): API Gateway service which will be the entry
 point for all the requests to the other services.
 
-* [eureka-server](eureka-server/pom.xml): Eureka Server service which will be the
+* [eureka-server](src/eureka-server/pom.xml): Eureka Server service which will be the
 registry for all the other services.
 
-* [frontend-react](frontend-react/pom.xml): Frontend application with a ReactJS.
+* [frontend-react](src/frontend-react/pom.xml): Frontend application with a ReactJS.
 
-* [shared](shared/pom.xml): Shared library with common classes and configurations
+* [shared](src/shared/pom.xml): Shared library with common classes and configurations
 for all the services.
 
 Other functionalities that are included in this project are:

@@ -9,7 +9,6 @@ public class AggregateRoot {
     final public List<DomainEvent> pullDomainEvents() {
         final var recordedDomainEvents = this.recordedDomainEvents;
         this.recordedDomainEvents = new LinkedList<>();
-
         return recordedDomainEvents;
     }
 

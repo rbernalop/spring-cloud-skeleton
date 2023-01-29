@@ -3,7 +3,7 @@ package java.org.rbernalop.shared.infrastructure;
 import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 
-import java.org.rbernalop.shared.application.Service;
+import java.org.rbernalop.shared.domain.Service;
 import java.org.rbernalop.shared.domain.DomainEvent;
 import java.org.rbernalop.shared.domain.EventBus;
 import java.util.List;
