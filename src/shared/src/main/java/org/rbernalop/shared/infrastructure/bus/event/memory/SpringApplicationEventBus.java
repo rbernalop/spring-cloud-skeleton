@@ -1,11 +1,11 @@
-package java.org.rbernalop.shared.infrastructure;
+package org.rbernalop.shared.infrastructure.bus.event.memory;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 
-import java.org.rbernalop.shared.domain.Service;
-import java.org.rbernalop.shared.domain.DomainEvent;
-import java.org.rbernalop.shared.domain.EventBus;
+import org.rbernalop.shared.domain.Service;
+import org.rbernalop.shared.domain.bus.event.DomainEvent;
+import org.rbernalop.shared.domain.bus.event.EventBus;
 import java.util.List;
 
 @AllArgsConstructor

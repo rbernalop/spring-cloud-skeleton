@@ -1,5 +1,5 @@
-package java.org.rbernalop.shared.domain.bus.query;
+package org.rbernalop.shared.domain.bus.query;
 
 public interface QueryBus {
-    <R> R ask(Query query) throws QueryHandlerExecutionError;
+    <R extends Response> R ask(Query query) throws org.rbernalop.shared.domain.bus.query.QueryHandlerExecutionError;
 }

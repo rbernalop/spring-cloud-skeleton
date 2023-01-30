@@ -1,4 +1,4 @@
-package java.org.rbernalop.shared.domain;
+package org.rbernalop.shared.domain;
 
 import java.lang.annotation.*;
 

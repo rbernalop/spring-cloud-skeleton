@@ -1,32 +1,12 @@
-package java.org.rbernalop.shared.domain;
+package org.rbernalop.shared.domain.valueobject;
 
-import java.util.Objects;
+import lombok.Getter;
 
+@Getter
 public abstract class IntValueObject {
-    private Integer value;
+    private final Integer value;
 
     public IntValueObject(Integer value) {
         this.value = value;
-    }
-
-    public Integer value() {
-        return value;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        IntValueObject that = (IntValueObject) o;
-        return value.equals(that.value);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(value);
     }
 }

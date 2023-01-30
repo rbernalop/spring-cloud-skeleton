@@ -1,4 +1,4 @@
-package java.org.rbernalop.shared.domain.bus.command;
+package org.rbernalop.shared.domain.bus.command;
 
 public final class CommandHandlerExecutionError extends RuntimeException {
     public CommandHandlerExecutionError(Throwable cause) {

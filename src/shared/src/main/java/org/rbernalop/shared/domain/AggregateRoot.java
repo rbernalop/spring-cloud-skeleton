@@ -1,5 +1,6 @@
-package java.org.rbernalop.shared.domain;
+package org.rbernalop.shared.domain;
 
+import org.rbernalop.shared.domain.bus.event.DomainEvent;
 import java.util.LinkedList;
 import java.util.List;
 

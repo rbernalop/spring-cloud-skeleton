@@ -1,4 +1,4 @@
-package java.org.rbernalop.shared.domain.bus.query;
+package org.rbernalop.shared.domain.bus.query;
 
 public final class QueryNotRegisteredError extends Exception {
     public QueryNotRegisteredError(Class<? extends Query> query) {

@@ -1,4 +1,4 @@
-package java.org.rbernalop.shared.domain.bus.event;
+package org.rbernalop.shared.domain.bus.event;
 
 import java.lang.annotation.*;
 
@@ -6,5 +6,5 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Inherited
 public @interface DomainEventSubscriber {
-    Class<? extends DomainEvent>[] value();
+    Class<? extends org.rbernalop.shared.domain.bus.event.DomainEvent>[] value();
 }

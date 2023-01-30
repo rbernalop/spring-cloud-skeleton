@@ -1,4 +1,4 @@
-package java.org.rbernalop.shared.domain.bus.event;
+package org.rbernalop.shared.domain.bus.event;
 
 import java.util.List;
 
