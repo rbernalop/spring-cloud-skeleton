@@ -92,3 +92,7 @@ bin/
 target/
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+### ELK ###
+/log/
+/configuration/elasticsearch/
