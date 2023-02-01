@@ -28,3 +28,7 @@ Docker registry with the command `docker login` :)
 - GitHub Actions which will automatically check that tests are passing when trying
 to merge a pull request and also will build and push the Docker images when on 
 every push to the master branch.
+⚠️ **Note:** You need to set the following secrets in the GitHub repository settings:
+- `DISCORD_URL`: URL of the Discord webhook to send the notifications.
+- `DOCKER_USERNAME`: Username of the Docker registry.
+- `DOCKER_HUB_PASSWORD`: Password of the Docker registry.
