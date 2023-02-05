@@ -28,7 +28,10 @@ them in Kibana (Elasticsearch address is http://172.17.0.2:9200 when you configu
 the Kibana server).
   - The ELK services are configured in the [docker-compose.yml](docker-compose.yml)
   - The Logback configuration is in every service's 
-  [logback-spring.xml](src/api-gateway/src/main/resources/logback-spring.xml)
+  [logback-spring.xml](src/api-gateway/src/main/resources/logback-spring.xml).
+  This configuration only sends the logs to the Logstash server when you are running
+  the services with profile `prod` and you can send the environment variables 
+  `LOGSTASH_HOST` and `LOGSTASH_PORT` to configure the Logstash server address.
 
 - GitHub Actions which will automatically check that tests are passing when trying
 to merge a pull request and also will build and push the Docker images when on 
