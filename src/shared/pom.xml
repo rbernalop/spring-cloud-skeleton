@@ -11,7 +11,7 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <artifactId>shared</artifactId>
-    <packaging>pom</packaging>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
