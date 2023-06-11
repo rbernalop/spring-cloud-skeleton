@@ -4,11 +4,17 @@ spring:
     cloud:
         gateway:
             routes:
+    main:
+        allow-bean-definition-overriding: true
 server:
-    port: 8084
+    port: ${GATEWAY_PORT:8080}
 eureka:
     client:
         service-url:
             defaultZone: http://${EUREKA_SERVER_ADDRESS:localhost}:8761/eureka
         fetch-registry: true
         register-with-eureka: true
+    instance:
+        prefer-ip-address: true
+        ip-address: ${GATEWAY_ADDRESS:localhost}
+        instance-id: ${GATEWAY_ADDRESS:localhost}:${GATEWAY_PORT:8080}

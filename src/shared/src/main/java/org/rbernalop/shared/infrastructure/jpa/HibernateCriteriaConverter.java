@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @AllArgsConstructor
 public final class HibernateCriteriaConverter<T> {
-    private final CriteriaBuilder builder;
+    private CriteriaBuilder builder;
 
     private final HashMap<FilterOperator, BiFunction<Path<String>, String, Predicate>> predicateTransformers =
         new HashMap<>() {{
@@ -62,5 +62,4 @@ public final class HibernateCriteriaConverter<T> {
     private Predicate notContainsPredicateTransformer(Path<String> filter, String root) {
         return builder.notLike(filter, String.format("%%%s%%", filter));
     }
-
 }
